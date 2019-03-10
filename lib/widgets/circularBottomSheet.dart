@@ -17,16 +17,16 @@ class CircularBottomSheetState extends State<CircularBottomSheet>{
   }
 }
 
-void _triggerBottomModalSheet(context){
+void _triggerBottomModalSheet(context,child){
   showModalBottomSheet(
     context: context,
     builder: (BuildContext bc){
-      return _circularContainer(bc);
+      return _circularContainer(bc,child);
     }
   );
 }
 
-Widget _circularContainer(context){
+Widget _circularContainer(context,child){
   return Container(
     color: const Color(0xff000000),
     width: 400,
@@ -34,6 +34,7 @@ Widget _circularContainer(context){
       clipper: CircularClipper(),
       child: Container(
         height: 300,
+        child: child,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
@@ -46,7 +47,7 @@ Widget _circularContainer(context){
 
 Widget _floatingActionButton(context,onPressedEvent){
   return FloatingActionButton(
-    onPressed: (){ onPressedEvent(context);},
+    onPressed: (){ onPressedEvent(context,null);},
     backgroundColor: const Color(0xff107cfe),
     child: Icon(Icons.add)
   );
