@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/circularBottomSheet.dart';
 
 void main(List<String> args) {
   runApp(mainApp);
@@ -7,7 +8,7 @@ void main(List<String> args) {
 class DevspaceApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Text('This is Devspace App!');
+    return CircularBottomSheet();
   }
 }
 
@@ -29,5 +30,6 @@ var devspaceTheme = ThemeData(
   accentColor: const Color(0xff000000),
   primaryColor: const Color(0xff107cfe),
   brightness: Brightness.dark,
-  scaffoldBackgroundColor: const Color(0xff000000)
+  scaffoldBackgroundColor: const Color(0xff000000),
+  canvasColor: Colors.transparent
 );
