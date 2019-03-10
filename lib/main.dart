@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
 
 void main(List<String> args) {
   runApp(mainApp);
@@ -8,7 +7,7 @@ void main(List<String> args) {
 class DevspaceApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return LoginWidget();
+    return Text('This is Devspace App!');
   }
 }
 
