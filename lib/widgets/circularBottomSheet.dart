@@ -28,7 +28,7 @@ void _triggerBottomModalSheet(context,child){
 
 Widget _circularContainer(context,child){
   return Container(
-    color: const Color(0xff000000),
+    color: const Color(0xFFFFFF),
     width: 400,
     child: ClipPath(
       clipper: CircularClipper(),
