@@ -30,7 +30,6 @@ class DevspaceApp extends StatelessWidget{
       home: AuthGreet(),
       theme: devspaceTheme,
       routes: <String,WidgetBuilder>{
-        '/register':(context)=>Register()
       },
     );
   }

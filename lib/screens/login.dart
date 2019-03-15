@@ -6,14 +6,14 @@ final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
 final GlobalKey<FormFieldState> _passKey = GlobalKey<FormFieldState>();
 String _email, _pass, _confPass;
 
-class Register extends StatefulWidget {
+class Login extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return RegisterState();
+    return LoginState();
   }
 }
 
-class RegisterState extends State<Register> {
+class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,10 +43,9 @@ Widget _formContainer(context) {
     child: Column(
       children: <Widget>[
         sizedContainer(context,_emaiLField),
-        spacer(30.0),
+        spacer(50.0),
         sizedContainer(context,_createPasswordField),
-        spacer(30.0),
-        sizedContainer(context,_confirmPasswordField),
+        spacer(10.0),
         _registerButton(context)
       ],
     ),
@@ -85,7 +84,7 @@ Widget _createPasswordField(context) {
       autocorrect: false,
       decoration: InputDecoration(
           labelStyle: TextStyle(color: const Color(0xffffffff)),
-          labelText: "CREATE PASSWORD",
+          labelText: "PASSWORD",
           enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: const Color(0xffffffff)))),
       validator: (str) =>
@@ -96,28 +95,6 @@ Widget _createPasswordField(context) {
   );
 }
 
-Widget _confirmPasswordField(context) {
-  return Theme(
-    data: ThemeData(
-      primaryColor: const Color(0xff107cfe),
-      accentColor: const Color(0xffffffff),
-    ),
-    child: TextFormField(
-      autocorrect: false,
-      style: TextStyle(color: const Color(0xffffffff)),
-      decoration: InputDecoration(
-        labelStyle: TextStyle(color: const Color(0xffffffff)),
-        labelText: "CONFIRM PASSWORD",
-        enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: const Color(0xffffffff))),
-      ),
-      validator: (str) => !(str == _passKey.currentState.value)
-          ? "Password doesn't match!"
-          : null,
-      obscureText: true,
-    ),
-  );
-}
 
 Widget _registerButton(context) {
   return screenwideButton(
@@ -127,7 +104,7 @@ Widget _registerButton(context) {
     },
     edgeTop: 100.0,
     edgeLeft: 15.0,
-    btnText: 'Signup',
+    btnText: 'Login',
     btnTextColor: const Color(0xff107cfe),
     btnHeight: 45.0,
     btnWidth: 330.0,
