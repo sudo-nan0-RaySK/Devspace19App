@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:devspace_app/widgets/devspaceHolder.dart';
 import 'package:devspace_app/widgets/screenwideButton.dart';
+import 'package:devspace_app/screens/register.dart';
+import 'package:flutter/cupertino.dart';
 class AuthGreet extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -46,7 +48,12 @@ Widget _loginButton(context){
 Widget _registerButton(context){
   return screenwideButton(
     context: context,
-    onTapAction: (){Navigator.of(context).pushReplacementNamed('/register');},
+    onTapAction: (){Navigator.of(context,rootNavigator: true).push(
+      MaterialPageRoute(
+        fullscreenDialog: true,
+        builder: (BuildContext context)=>Register()
+      )
+    );},
     edgeTop: 600.0,
     edgeLeft: 25.0,
     btnText: 'Signup',

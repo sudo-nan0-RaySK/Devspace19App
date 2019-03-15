@@ -17,7 +17,13 @@ class RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _registerLayout(context),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: <Widget>[
+            _registerLayout(context),
+          ],
+        ),
+      )
     );
   }
 }
@@ -25,7 +31,7 @@ class RegisterState extends State<Register> {
 Widget _registerLayout(context) {
   return Column(
     children: <Widget>[
-      devspaceHolder(context, 9.0, 100.0),
+      devspaceHolder(context, 6.0, 40.0),
       _formContainer(context)
     ],
   );
@@ -37,7 +43,9 @@ Widget _formContainer(context) {
     child: Column(
       children: <Widget>[
         sizedContainer(context,_emaiLField),
+        spacer(),
         sizedContainer(context,_createPasswordField),
+        spacer(),
         sizedContainer(context,_confirmPasswordField),
         _registerButton(context)
       ],
@@ -135,6 +143,10 @@ Widget sizedContainer(context,child){
     child: child(context),
     width: 300,
   );
+}
+
+Widget spacer(){
+  return Container(height: 10,);
 }
 
 void onPressed(context) {
