@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:devspace_app/widgets/devspaceHolder.dart';
 import 'package:devspace_app/widgets/screenwideButton.dart';
 import 'package:devspace_app/widgets/formFieldIcon.dart';
+import 'package:devspace_app/widgets/devspaceAppbar.dart';
 
 final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
 final GlobalKey<FormFieldState> _passKey = GlobalKey<FormFieldState>();
@@ -18,9 +19,7 @@ class RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Devspace\'19'),
-      ),
+      appBar: devspaceAppBar(context, (){},false),
       body:SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
