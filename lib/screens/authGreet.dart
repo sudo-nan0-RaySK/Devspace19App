@@ -15,12 +15,21 @@ class AuthGreetState extends State<AuthGreet>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          devspaceHolder(context,43.0,160.0),
-          _loginButton(context),
-          _registerButton(context)
-        ],
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('lib/assets/mainScreenbg.png'),
+            fit: BoxFit.cover
+          )
+        ),
+        child: Stack(
+          children: <Widget>[
+            devspaceHolder(context,43.0,160.0),
+            _loginButton(context),
+            _registerButton(context)
+          ],
+        ),
       )
     );
   }
@@ -67,7 +76,7 @@ Widget _registerButton(context){
     btnHeight: 45.0,
     btnWidth: 330.0,
     decorationObject: BoxDecoration(
-      color: const Color(0xffffffff),
+      color: const Color(0xfffafafa),
       shape: BoxShape.rectangle,
       borderRadius: BorderRadius.all(Radius.circular(10.0))
       ),

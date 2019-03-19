@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:devspace_app/widgets/devspaceHolder.dart';
 import 'package:devspace_app/widgets/screenwideButton.dart';
+import 'package:devspace_app/widgets/formFieldIcon.dart';
 
 final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
 final GlobalKey<FormFieldState> _passKey = GlobalKey<FormFieldState>();
@@ -17,13 +18,25 @@ class RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Stack(
-          children: <Widget>[
-            _registerLayout(context),
-          ],
+      appBar: AppBar(
+        title: Text('Devspace\'19'),
+      ),
+      body:SingleChildScrollView(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('lib/assets/mainScreenbg.png')
+            )
+          ),
+          child: Stack(
+            children: <Widget>[
+              _registerLayout(context),
+            ],
+          ),
         ),
-      )
+      ),
     );
   }
 }
@@ -31,7 +44,7 @@ class RegisterState extends State<Register> {
 Widget _registerLayout(context) {
   return Column(
     children: <Widget>[
-      devspaceHolder(context, 6.0, 40.0),
+      devspaceHolder(context, 6.0, 10.0),
       _formContainer(context)
     ],
   );
@@ -42,11 +55,32 @@ Widget _formContainer(context) {
     key: _formKey,
     child: Column(
       children: <Widget>[
-        sizedContainer(context,_emaiLField),
-        spacer(30.0),
-        sizedContainer(context,_createPasswordField),
-        spacer(30.0),
-        sizedContainer(context,_confirmPasswordField),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            formFieldIcon(context, 30.0, 25.0, 'lib/assets/emailIcon.png'),
+            spacer(0.0, 10.0),
+            sizedContainer(context,_emaiLField,60.0),
+          ],
+        ),
+        spacer(25.0,0.0),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            formFieldIcon(context, 30.0, 20.0, 'lib/assets/PASSWORDIcon.png'),
+            spacer(0.0, 10.0),
+            sizedContainer(context,_createPasswordField,60.0),
+          ],
+        ),
+        spacer(25.0,0.0),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            formFieldIcon(context, 30.0, 25.0, 'lib/assets/EyeIcon.png'),
+            spacer(0.0, 10.0),
+            sizedContainer(context,_confirmPasswordField,60.0),
+          ],
+        ),
         _registerButton(context)
       ],
     ),
@@ -63,6 +97,7 @@ Widget _emaiLField(context) {
       autocorrect: false,
       style: TextStyle(color: const Color(0xffffffff)),
       decoration: InputDecoration(
+          contentPadding: const EdgeInsets.all(5.0),
           labelStyle: TextStyle(color: const Color(0xffffffff)),
           labelText: "EMAIL",
           enabledBorder: UnderlineInputBorder(
@@ -84,6 +119,7 @@ Widget _createPasswordField(context) {
       style: TextStyle(color: const Color(0xffffffff)),
       autocorrect: false,
       decoration: InputDecoration(
+          contentPadding: const EdgeInsets.all(5.0),
           labelStyle: TextStyle(color: const Color(0xffffffff)),
           labelText: "CREATE PASSWORD",
           enabledBorder: UnderlineInputBorder(
@@ -106,6 +142,7 @@ Widget _confirmPasswordField(context) {
       autocorrect: false,
       style: TextStyle(color: const Color(0xffffffff)),
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(5.0),
         labelStyle: TextStyle(color: const Color(0xffffffff)),
         labelText: "CONFIRM PASSWORD",
         enabledBorder: UnderlineInputBorder(
@@ -132,21 +169,22 @@ Widget _registerButton(context) {
     btnHeight: 45.0,
     btnWidth: 330.0,
     decorationObject: BoxDecoration(
-        color: const Color(0xffffffff),
+        color: const Color(0xfffafafa),
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.all(Radius.circular(10.0))),
   );
 }
 
-Widget sizedContainer(context,child){
+Widget sizedContainer(context,child,height){
   return Container(
     child: child(context),
     width: 300,
+    height: height,
   );
 }
 
-Widget spacer(height){
-  return Container(height: height,);
+Widget spacer(height,width){
+  return Container(height: height,width:width);
 }
 
 void onPressed(context) {
