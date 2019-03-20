@@ -4,19 +4,17 @@ Widget devspaceAppBar(context,eventHandler,enabled,autoImplyLeading){
   return AppBar(
     automaticallyImplyLeading: autoImplyLeading,
     backgroundColor: const Color(0xff111111),
-    title: devspaceHeader(context),
-    actions: <Widget>[
-      logoutBtn(context, eventHandler,enabled)
-    ],
+    title: devspaceHeader(context,50.0),
   );
 }
 
-Widget devspaceHeader(context){
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.start,
+Widget devspaceHeader(context,leftPadding){
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
       Container(
-        width: 110,
+        margin: EdgeInsets.only(left:leftPadding,top: 1.0),
+        width: 160,
         height: 55,
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -29,25 +27,4 @@ Widget devspaceHeader(context){
   );
 }
 
-Widget logoutBtn(context,eventHandler,enabled){
-  if(!enabled){
-    return Container();
-  }
-  return Padding(
-    padding: const EdgeInsets.only(top:12.0,left:10.0,right:15.0,bottom:15.0),
-    child: Container(
-      width: 100,
-      height: MediaQuery.of(context).size.height/2,
-      child: logoutFlatButton(context, eventHandler),
-    ),
-  );
-}
 
-Widget logoutFlatButton(context,eventHandler){
-  return FlatButton(
-    color: const Color(0xff0261a6),
-    textColor: const Color(0xfffafafa),
-    child: Text('Logout'),
-    onPressed: eventHandler,
-  );
-}

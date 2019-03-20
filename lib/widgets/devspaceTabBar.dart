@@ -6,10 +6,7 @@ Widget devspaceTabBar({context,eventHandler,enabled,tabController,tabs,autoImply
   return AppBar(
     backgroundColor: const Color(0xff111111),
     automaticallyImplyLeading: autoImplyLeading,
-    title:devspaceHeader(context),
-    actions: <Widget>[
-      logoutBtn(context, eventHandler, enabled)
-    ],
+    title:devspaceHeader(context,103.0),
     bottom: _bubbleTabBar(context,tabController,tabs),
   );
 }

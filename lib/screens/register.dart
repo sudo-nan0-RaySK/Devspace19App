@@ -26,7 +26,8 @@ class RegisterState extends State<Register> {
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('lib/assets/mainScreenbg.png')
+              image: AssetImage('lib/assets/mainScreenbg.png'),
+              fit: BoxFit.contain
             )
           ),
           child: Stack(
