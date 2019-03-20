@@ -19,7 +19,7 @@ class RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: devspaceAppBar(context, (){},false),
+      appBar: devspaceAppBar(context, (){},false,true),
       body:SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,

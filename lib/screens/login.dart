@@ -19,7 +19,7 @@ class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: devspaceAppBar(context,(){},false),
+    appBar: devspaceAppBar(context,(){},false,true),
     body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
@@ -166,6 +166,6 @@ void onPressed(context) {
   var formKey = _formKey.currentState;
   if (formKey.validate()) {
     print('Login Called !');
-    Navigator.pushReplacementNamed(context, '/timeline');
+    Navigator.pushNamedAndRemoveUntil(context, '/timeline', ModalRoute.withName('/') );
   }
 }

@@ -39,12 +39,7 @@ class AuthGreetState extends State<AuthGreet>{
 Widget _loginButton(context){
   return screenwideButton(
     context: context,
-    onTapAction: (){Navigator.of(context,rootNavigator: true).push(
-      MaterialPageRoute(
-        fullscreenDialog: true,
-        builder: (BuildContext context)=>Login()
-      )
-    );},
+    onTapAction: (){Navigator.pushNamedAndRemoveUntil(context, '/login',ModalRoute.withName('/'));},
     edgeTop: 530.0,
     edgeLeft: 25.0,
     btnText: 'Login',

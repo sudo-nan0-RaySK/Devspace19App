@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget devspaceAppBar(context,eventHandler,enabled){
+Widget devspaceAppBar(context,eventHandler,enabled,autoImplyLeading){
   return AppBar(
+    automaticallyImplyLeading: autoImplyLeading,
     backgroundColor: const Color(0xff111111),
     title: devspaceHeader(context),
     actions: <Widget>[

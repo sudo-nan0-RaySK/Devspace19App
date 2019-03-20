@@ -5,6 +5,7 @@ import 'widgets/curvyBottomBar.dart';
 import 'screens/authGreet.dart';
 import 'screens/register.dart';
 import 'screens/timelineFlow.dart';
+import 'screens/login.dart';
 
 
 void main(List<String> args) {
@@ -32,6 +33,7 @@ class DevspaceApp extends StatelessWidget{
       theme: devspaceTheme,
       routes: <String,WidgetBuilder>{
         '/timeline': (context)=>TimelineFlow(),
+        '/login':(context)=>Login()
       },
     );
   }

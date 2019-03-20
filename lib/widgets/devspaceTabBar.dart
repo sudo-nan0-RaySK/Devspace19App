@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:devspace_app/widgets/devspaceAppBar.dart';
 
-Widget devspaceTabBar({context,eventHandler,enabled,tabController,tabs}){
+Widget devspaceTabBar({context,eventHandler,enabled,tabController,tabs,autoImplyLeading}){
   return AppBar(
     backgroundColor: const Color(0xff111111),
+    automaticallyImplyLeading: autoImplyLeading,
     title:devspaceHeader(context),
     actions: <Widget>[
       logoutBtn(context, eventHandler, enabled)
@@ -19,6 +20,8 @@ Widget _bubbleTabBar(context,tabController,tabs){
     labelColor: Colors.white,
     indicatorSize: TabBarIndicatorSize.tab,
     indicator: _bubbleIndicator(),
+    tabs:tabs,
+    controller: tabController,
   );
 }
 
