@@ -166,5 +166,6 @@ void onPressed(context) {
   var formKey = _formKey.currentState;
   if (formKey.validate()) {
     print('Login Called !');
+    Navigator.pushReplacementNamed(context, '/timeline');
   }
 }

@@ -1,23 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CircularBottomSheet extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    return CircularBottomSheetState();
-  }
-}
 
-class CircularBottomSheetState extends State<CircularBottomSheet>{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Devspace\'19')),
-      floatingActionButton: _floatingActionButton(context, _triggerBottomModalSheet),
-    );
-  }
-}
-
-void _triggerBottomModalSheet(context,child){
+void triggerBottomModalSheet(context,child){
   showModalBottomSheet(
     context: context,
     builder: (BuildContext bc){
@@ -42,14 +26,6 @@ Widget _circularContainer(context,child){
         ),
       ),
     ),
-  );
-}
-
-Widget _floatingActionButton(context,onPressedEvent){
-  return FloatingActionButton(
-    onPressed: (){ onPressedEvent(context,null);},
-    backgroundColor: const Color(0xff107cfe),
-    child: Icon(Icons.add)
   );
 }
 
