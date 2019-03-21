@@ -56,9 +56,9 @@ class CodespaceState extends State<Codespace>
               eventHandler1: () {Navigator.pushReplacementNamed(context, '/timeline');},
               eventHandler2: () {},
               eventHandler3: () {},
-              asset1: 'lib/assets/itinerary.png',
-              asset2: 'lib/assets/tri_cir_sqr.png',
-              asset3: 'lib/assets/mike.png',
+              asset1: 'lib/assets/itinerarybg.png',
+              asset2: 'lib/assets/tri_cir_sq_bg.png',
+              asset3: 'lib/assets/micbg.png',
               selectedIndex: 2
               );
         },
@@ -89,11 +89,124 @@ Widget _codeSpaceLayout({context,List<Tab> tabs,controller}){
           controller: controller,
           children: tabs.map(
             (Tab tab){
-              return Center(child: Text(tab.text),);
+              if(tab.text=='CODESPACE'){
+                return codespaceTab(context);
+              }
+              else{
+                return Center(child: Text(tab.text),);
+              }
             }
           ).toList(),
         )
       ],
     ),
+  );
+}
+
+Widget codespaceTab(context){
+  return Column(
+    mainAxisSize: MainAxisSize.max,
+    children: <Widget>[
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top:28.0),
+            child: Text(
+              "CODESPACE",
+              style: TextStyle(
+                color: const Color(0xff107cfe),
+                fontSize: 25.0,
+              ),
+            ),
+          )
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8.0,8.0,8.0,0.0),
+            child: Text(
+              "A national level hackathon aimed at bringing",
+              textAlign: TextAlign.center,
+            ),
+          )
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Text(
+              "India’s most fastforward thinkers, innovators and",
+              textAlign: TextAlign.center,
+            ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Text(
+              "Implementera,for the progress of technology",
+              textAlign: TextAlign.center,
+            ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Text(
+              "and literacy. 24 Hours dedicated to drive the",
+              textAlign: TextAlign.center,
+            ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Text(
+              "nation further into digital revolution.",
+              textAlign: TextAlign.center,
+            ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top:28.0,bottom: 24.0),
+            child: Text(
+              "WHAT YOU WIN",
+              style: TextStyle(
+                color: const Color(0xff107cfe),
+                fontSize: 19.0,
+              ),
+            ),
+          )
+        ],
+      ),
+      Row(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(left:24.0,top: 18.0),
+            child: Text(
+                "PRIZE 1 : ",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: const Color(0xff107cfe),
+                  fontSize: 15.0,
+                ),
+              ),
+          ),
+        ],
+      ),
+    ],
   );
 }

@@ -54,6 +54,9 @@ flutter:
     - lib/assets/itinerary.png
     - lib/assets/coupons.png
     - lib/assets/codespacebg.png
+    - lib/assets/itinerarybg.png
+    - lib/assets/micbg.png
+    - lib/assets/tri_cir_sq_bg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
