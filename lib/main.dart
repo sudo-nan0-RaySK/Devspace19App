@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'widgets/circularBottomSheet.dart';
-import 'widgets/curvyBottomBar.dart';
 import 'screens/authGreet.dart';
 import 'screens/register.dart';
 import 'screens/timelineFlow.dart';
