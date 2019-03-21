@@ -114,11 +114,11 @@ Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,
               child: Text('Codespace',style: TextStyle(color: index2Color),),
             ),
             Padding(
-              padding: const EdgeInsets.only(left:210.0,top:1.0),
+              padding: const EdgeInsets.only(left:215.0,top:1.0),
               child: Text('Events',style: TextStyle(color: index3Color),),
             )
           ],
-        )
+        ),
       ],
     ),
   );

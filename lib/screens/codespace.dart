@@ -74,38 +74,39 @@ class CodespaceState extends State<Codespace>
 }
 
 Widget _codeSpaceLayout({context,List<Tab> tabs,controller}){
-  return Container(
-    height: MediaQuery.of(context).size.height,
-    width: MediaQuery.of(context).size.width,
-    decoration: BoxDecoration(
-      image: DecorationImage(
-        image: AssetImage('lib/assets/codespacebg.png'),
-        fit: BoxFit.cover
-      )
-    ),
-    child: Stack(
-      children: <Widget>[
-        TabBarView(
-          controller: controller,
-          children: tabs.map(
-            (Tab tab){
-              if(tab.text=='CODESPACE'){
-                return codespaceTab(context);
-              }
-              else{
-                return Center(child: Text(tab.text),);
-              }
-            }
-          ).toList(),
+  return SingleChildScrollView(
+      child: Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('lib/assets/codespacebg.png'),
+          fit: BoxFit.cover
         )
-      ],
+      ),
+      child: Stack(
+        children: <Widget>[
+          TabBarView(
+            controller: controller,
+            children: tabs.map(
+              (Tab tab){
+                if(tab.text=='CODESPACE'){
+                  return codespaceTab(context);
+                }
+                else{
+                  return Center(child: Text(tab.text),);
+                }
+              }
+            ).toList(),
+          )
+        ],
+      ),
     ),
   );
 }
 
 Widget codespaceTab(context){
   return Column(
-    mainAxisSize: MainAxisSize.max,
     children: <Widget>[
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -192,21 +193,68 @@ Widget codespaceTab(context){
           )
         ],
       ),
-      Row(
+      prizetable(context)
+    ],
+  );
+}
+
+Widget prizetable(context){
+  return Table(
+    children: <TableRow>[
+      TableRow(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left:24.0,top: 18.0),
+            padding: const EdgeInsets.only(right:58.0),
             child: Text(
-                "PRIZE 1 : ",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: const Color(0xff107cfe),
-                  fontSize: 15.0,
-                ),
-              ),
+              "PRIZE 1 :",
+              textAlign: TextAlign.right,
+              style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+            ),
           ),
-        ],
+          Padding(
+            padding: const EdgeInsets.only(right:20.0),
+            child: Text(
+              "Cash prize 35k, goodies, T-shirts, licenses of various softwares like Sketch, Invision,and much more",
+            ),
+          ),
+        ]
       ),
+      TableRow(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right:58.0,top: 8.0),
+            child: Text(
+              "PRIZE 2 :",
+              textAlign: TextAlign.right,
+              style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right:20.0,top: 8.0),
+            child: Text(
+              "Cash prize 35k, goodies, T-shirts, licenses of various softwares like Sketch, Invision,and much more",
+            ),
+          ),
+        ]
+      ),
+      TableRow(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right:58.0,top: 8.0),
+            child: Text(
+              "PRIZE 3 :",
+              textAlign: TextAlign.right,
+              style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right:20.0,top: 8.0),
+            child: Text(
+              "Cash prize 35k, goodies, T-shirts, licenses of various softwares like Sketch, Invision,and much more",
+            ),
+          ),
+        ]
+      )
     ],
   );
 }
