@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-void triggerBottomModalSheet({context,eventHandler1,eventHandler2,eventHandler3,asset1,asset2,asset3}){
+void triggerBottomModalSheet({context,eventHandler1,eventHandler2,eventHandler3,asset1,asset2,asset3,selectedIndex}){
   showModalBottomSheet(
     context: context,
     builder: (BuildContext bc){
@@ -13,7 +13,8 @@ void triggerBottomModalSheet({context,eventHandler1,eventHandler2,eventHandler3,
             eventHandler3: eventHandler3,
             asset1: asset1,
             asset2: asset2,
-            asset3: asset3
+            asset3: asset3,
+            selectedIndex : selectedIndex,
           )
       );
     }
@@ -59,7 +60,22 @@ class CircularClipper extends CustomClipper<Path>{
   }
 }
 
-Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,asset2,asset3}){
+Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,asset2,asset3,int selectedIndex}){
+  var index1Color = Colors.white;
+  var index2Color = Colors.white;
+  var index3Color = Colors.white;
+  switch (selectedIndex) {
+    case 1:
+      index1Color = const Color(0xff107cfe);
+      break;
+    case 2:
+      index2Color = const Color(0xff107cfe);
+      break;
+    case 3:
+      index3Color = const Color(0xff107cfe);
+      break;
+    default:
+  }
   return Container(
     color: Colors.transparent,
     child: Column(
@@ -76,7 +92,7 @@ Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,
         ),
         Padding(
           padding: const EdgeInsets.only(top:8.0),
-          child: Text('Itinerary'),
+          child: Text('Itinerary',style: TextStyle(color: index1Color),),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -95,11 +111,11 @@ Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(left:25.0,top:8.0),
-              child: Text('Codespace'),
+              child: Text('Codespace',style: TextStyle(color: index2Color),),
             ),
             Padding(
               padding: const EdgeInsets.only(left:210.0,top:1.0),
-              child: Text('Events'),
+              child: Text('Events',style: TextStyle(color: index3Color),),
             )
           ],
         )

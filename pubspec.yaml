@@ -53,6 +53,7 @@ flutter:
     - lib/assets/user.png
     - lib/assets/itinerary.png
     - lib/assets/coupons.png
+    - lib/assets/codespacebg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

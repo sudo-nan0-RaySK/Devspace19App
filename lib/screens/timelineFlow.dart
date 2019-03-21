@@ -57,11 +57,12 @@ class TimelineFlowState extends State<TimelineFlow> with SingleTickerProviderSta
         onPressed: (){triggerBottomModalSheet(
           context:context,
           eventHandler1: (){},
-          eventHandler2: (){},
+          eventHandler2: (){Navigator.pushReplacementNamed(context, '/codespace');},
           eventHandler3: (){},
           asset1: 'lib/assets/itinerary.png',
           asset2: 'lib/assets/tri_cir_sqr.png',
-          asset3: 'lib/assets/mike.png' 
+          asset3: 'lib/assets/mike.png',
+          selectedIndex: 1, 
         );},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
