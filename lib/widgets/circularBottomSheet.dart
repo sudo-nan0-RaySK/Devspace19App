@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
 
-void triggerBottomModalSheet(context,child){
+void triggerBottomModalSheet({context,eventHandler1,eventHandler2,eventHandler3,asset1,asset2,asset3}){
   showModalBottomSheet(
     context: context,
     builder: (BuildContext bc){
-      return _circularContainer(bc,child);
+      return _circularContainer(bc,
+      roundedButtons(
+            context: context,
+            eventHandler1: eventHandler1,
+            eventHandler2: eventHandler2,
+            eventHandler3: eventHandler3,
+            asset1: asset1,
+            asset2: asset2,
+            asset3: asset3
+          )
+      );
     }
   );
 }
@@ -22,7 +32,7 @@ Widget _circularContainer(context,child){
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          color: const Color(0xff107cfe),
+          color: const Color(0xff111111),
         ),
       ),
     ),
@@ -47,4 +57,70 @@ class CircularClipper extends CustomClipper<Path>{
   bool shouldReclip(CustomClipper<Path> oldClipper) {
     return false;
   }
+}
+
+Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,asset2,asset3}){
+  return Container(
+    color: Colors.transparent,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top:69.0,left:5.0),
+              child: roundedButtonMaterial(context,eventHandler1,asset1),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top:8.0),
+          child: Text('Itinerary'),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(left:35.0,top:10.0),
+              child: roundedButtonMaterial(context,eventHandler2,asset2),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left:220.0,top:10.0),
+              child: roundedButtonMaterial(context,eventHandler3,asset3),
+            )
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(left:25.0,top:8.0),
+              child: Text('Codespace'),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left:210.0,top:1.0),
+              child: Text('Events'),
+            )
+          ],
+        )
+      ],
+    ),
+  );
+}
+
+Widget roundedButtonMaterial(context,eventHandler,asset){
+  return GestureDetector(
+    onTap: eventHandler,
+    child: Container(
+      width:55,
+      height:55,
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        image: DecorationImage(
+          image: AssetImage(asset),
+          fit: BoxFit.fitHeight,
+        )
+      ),
+    )
+  );
 }

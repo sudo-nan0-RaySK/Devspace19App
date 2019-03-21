@@ -54,7 +54,15 @@ class TimelineFlowState extends State<TimelineFlow> with SingleTickerProviderSta
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.arrow_upward),
         backgroundColor: const Color(0xff107cfe),
-        onPressed: (){triggerBottomModalSheet(context, null);},
+        onPressed: (){triggerBottomModalSheet(
+          context:context,
+          eventHandler1: (){},
+          eventHandler2: (){},
+          eventHandler3: (){},
+          asset1: 'lib/assets/itinerary.png',
+          asset2: 'lib/assets/tri_cir_sqr.png',
+          asset3: 'lib/assets/mike.png' 
+        );},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: _timelineLayout(context,tabs,_tabController),
@@ -236,4 +244,70 @@ List<TimelineModel> day3List(){
     ),
   ];
   return list;
+}
+
+Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,asset2,asset3}){
+  return Container(
+    color: Colors.transparent,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top:65.0,left:5.0),
+              child: roundedButtonMaterial(context,eventHandler1,asset1),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top:8.0),
+          child: Text('Itinerary'),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(left:35.0,top:15.0),
+              child: roundedButtonMaterial(context,eventHandler2,asset2),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left:200.0,top:15.0),
+              child: roundedButtonMaterial(context,eventHandler3,asset3),
+            )
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(left:25.0,top:8.0),
+              child: Text('Codespace'),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left:130.0,top:1.0),
+              child: Text('Talks & Workshops'),
+            )
+          ],
+        )
+      ],
+    ),
+  );
+}
+
+Widget roundedButtonMaterial(context,eventHandler,asset){
+  return GestureDetector(
+    onTap: eventHandler,
+    child: Container(
+      width:55,
+      height:55,
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        image: DecorationImage(
+          image: AssetImage(asset),
+          fit: BoxFit.fitHeight,
+        )
+      ),
+    )
+  );
 }
