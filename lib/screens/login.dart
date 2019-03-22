@@ -166,6 +166,6 @@ void onPressed(context) {
   var formKey = _formKey.currentState;
   if (formKey.validate()) {
     print('Login Called !');
-    Navigator.pushNamedAndRemoveUntil(context, '/timeline', ModalRoute.withName('/') );
+    Navigator.pushNamedAndRemoveUntil(context, '/timeline', (Route<dynamic> route)=>false );
   }
 }

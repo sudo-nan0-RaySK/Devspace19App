@@ -53,7 +53,7 @@ class CodespaceState extends State<Codespace>
         onPressed: () {
           triggerBottomModalSheet(
               context: context,
-              eventHandler1: () {Navigator.pushReplacementNamed(context, '/timeline');},
+              eventHandler1: () {Navigator.pushNamedAndRemoveUntil(context, '/timeline',(Route<dynamic> route)=>false);},
               eventHandler2: () {},
               eventHandler3: () {},
               asset1: 'lib/assets/itinerarybg.png',
@@ -92,6 +92,9 @@ Widget _codeSpaceLayout({context,List<Tab> tabs,controller}){
               (Tab tab){
                 if(tab.text=='CODESPACE'){
                   return codespaceTab(context);
+                }
+                else if (tab.text=='TECH SUPPORT'){
+                  return techSupportTab(context);
                 }
                 else{
                   return Center(child: Text(tab.text),);
@@ -256,5 +259,164 @@ Widget prizetable(context){
         ]
       )
     ],
+  );
+}
+
+Widget techSupportTab(context){
+  var container = Container(
+              child: Text(
+                "Contact our technical team for any kind of technical assistence",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: const Color(0xffffffff),
+                  fontSize: 13.0,
+                ),
+              ),
+            );
+  return Column(
+    children: <Widget>[
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top:28.0),
+            child: Text(
+              "Technical Support",
+              style: TextStyle(
+                color: const Color(0xff107cfe),
+                fontSize: 25.0,
+              ),
+            ),
+          )
+        ],
+      ),
+      Flexible(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(8.0,12.0,8.0,8.0),
+          child: Container(
+            child: Text(
+              "Contact our technical team for any kind of technical assistence",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: const Color(0xffffffff),
+                  fontSize: 15.0,
+              ),
+            ),
+          ),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(68.0,18.0,8.0,8.0),
+        child: techSupportListItem(
+          context:context,
+          name:"Palash Golecha",
+          github: "git/pgolecha",
+          image: "loda"
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(68.0,18.0,8.0,8.0),
+        child: techSupportListItem(
+          context:context,
+          name:"Pradyun Gedam",
+          github: "git/pradyunsg",
+          image: "loda"
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(68.0,18.0,8.0,8.0),
+        child: techSupportListItem(
+          context:context,
+          name:"Mayank Aggarwaal",
+          github: "git/mayankaggarwal",
+          image: "loda"
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(68.0,18.0,8.0,8.0),
+        child: techSupportListItem(
+          context:context,
+          name:"Tarush Nagpal",
+          github: "git/CallMeTarush",
+          image: "loda"
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(68.0,18.0,8.0,8.0),
+        child: techSupportListItem(
+          context:context,
+          name:"Saksham Sethi",
+          github: "git/sudo-nan0-RaySK",
+          image: "loda"
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(68.0,18.0,8.0,8.0),
+        child: techSupportListItem(
+          context:context,
+          name:"Namit Nathwani",
+          github: "git/namsnath",
+          image: "loda"
+        ),
+      )
+    ],
+  );
+}
+
+Widget techSupportListItem({context,name,github,image}){
+  return Container(
+    child: Row(
+      children: <Widget>[
+        Column(
+          children: <Widget>[
+            Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('lib/assets/tri_cir_sq_bg.png'),
+                  fit: BoxFit.cover
+                )
+              ),
+            )
+          ],
+        ),
+        Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.fromLTRB(24.0,8.0,8.0,8.0),
+                  child: Text(
+                    name,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: const Color(0xff107cfe),
+                      fontSize: 18
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.fromLTRB(24.0,8.0,8.0,8.0),
+                  child: Text(
+                    github,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      color: const Color(0xffffffff),
+                      fontSize: 13
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ],
+        )
+      ],
+    ),
   );
 }

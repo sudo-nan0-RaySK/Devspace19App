@@ -57,7 +57,7 @@ class TimelineFlowState extends State<TimelineFlow> with SingleTickerProviderSta
         onPressed: (){triggerBottomModalSheet(
           context:context,
           eventHandler1: (){},
-          eventHandler2: (){Navigator.pushReplacementNamed(context, '/codespace');},
+          eventHandler2: (){Navigator.pushNamedAndRemoveUntil(context, '/codespace',(Route<dynamic> route)=>false);},
           eventHandler3: (){},
           asset1: 'lib/assets/itinerarybg.png',
           asset2: 'lib/assets/tri_cir_sq_bg.png',
