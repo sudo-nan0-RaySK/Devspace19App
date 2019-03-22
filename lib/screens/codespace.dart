@@ -99,7 +99,7 @@ Widget _codeSpaceLayout({context,List<Tab> tabs,controller}){
                   return techSupportTab(context);
                 }
                 else{
-                  return Center(child: Text(tab.text),);
+                  return tracksTab(context);
                 }
               }
             ).toList(),
@@ -411,4 +411,31 @@ Widget techSupportListItem({context,name,github,image}){
       ],
     ),
   );
+}
+
+Widget tracksTab(context){
+  return Column(
+    children: <Widget>[
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top:28.0),
+            child: Text(
+              "Technical Tracks",
+              style: TextStyle(
+                color: const Color(0xff107cfe),
+                fontSize: 25.0,
+              ),
+            ),
+          )
+        ],
+      ),
+    ],
+  );
+}
+
+Widget tracksItem(context){
+  return Container();
 }
