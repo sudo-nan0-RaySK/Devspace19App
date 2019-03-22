@@ -4,14 +4,21 @@ import 'package:devspace_app/widgets/circularBottomSheet.dart';
 import 'package:devspace_app/widgets/notchedBar.dart';
 
 class Codespace extends StatefulWidget {
+  final bool tracks;
+  Codespace({Key key, this.tracks}):super(key:key);
+
   @override
   State<StatefulWidget> createState() {
-    return CodespaceState();
+    return CodespaceState(tracks: tracks);
   }
 }
 
-class CodespaceState extends State<Codespace>
-    with SingleTickerProviderStateMixin {
+class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixin {
+
+  final bool tracks;
+
+  CodespaceState({Key key, this.tracks }):super();
+
   List<Tab> _tabs = <Tab>[
     Tab(
       text: 'CODESPACE',
@@ -28,6 +35,9 @@ class CodespaceState extends State<Codespace>
   void initState() {
     super.initState();
     _controller = TabController(vsync: this, length: _tabs.length);
+    if(tracks){
+      _controller.animateTo(1);
+    }
   }
 
   @override
@@ -46,7 +56,7 @@ class CodespaceState extends State<Codespace>
           tabs: _tabs,
           autoImplyLeading: false),
       bottomNavigationBar: notchedBar(
-        tracksPressedListner: () {},
+        tracksPressedListner: () {_controller.animateTo(1);},
         profilePressedListner: () {},
       ),
       floatingActionButton: FloatingActionButton(

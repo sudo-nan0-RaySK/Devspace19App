@@ -33,7 +33,8 @@ class DevspaceApp extends StatelessWidget{
         '/timeline': (context)=>TimelineFlow(),
         '/login':(context)=>Login(),
         '/register':(context)=>Register(),
-        '/codespace':(context)=>Codespace(),
+        '/codespace':(context)=>Codespace(tracks: false,),
+        '/tracks':(context)=>Codespace(tracks: true,),
       },
     );
   }
