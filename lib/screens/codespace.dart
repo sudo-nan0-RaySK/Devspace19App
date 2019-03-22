@@ -424,28 +424,103 @@ Widget techSupportListItem({context,name,github,image}){
 }
 
 Widget tracksTab(context){
-  return Column(
+  return ListView(
     children: <Widget>[
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top:28.0),
             child: Text(
               "Technical Tracks",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 color: const Color(0xff107cfe),
-                fontSize: 25.0,
+                fontSize: 27.0,
               ),
             ),
-          )
+          ),
+          tracksItem(
+            context: context,
+            image: 'lib/assets/Alexa.png',
+            heading: 'Alexa Skill Building',
+            description : 'This is so cool, Alexa come for  \n Devspace.'
+          ),
+          tracksItem(
+            context: context,
+            image: 'lib/assets/Education.png',
+            heading: 'Education Technology',
+            description : 'Learning how to learn. \n Can you bridge digital divide into \neducation.'
+          ),tracksItem(
+            context: context,
+            image: 'lib/assets/Defence.png',
+            heading: 'Defence and Surveillance',
+            description : 'I see you , I know what you had for \n dinner. Were the Cup-Noodles and \n Pizzas filling enough'
+          ),
+          tracksItem(
+            context: context,
+            image: 'lib/assets/Algos.png',
+            heading: 'Algorithmic Optimisations',
+            description : 'Got Data Structures? \n Codespace can be the perfect \naddition to your grade!'
+          ),
+          tracksItem(
+            context: context,
+            image: 'lib/assets/Space.png',
+            heading: 'Space Tech',
+            description : 'Sky is the limit ? \n Not with us!'
+          ),
+          spacer()
         ],
-      ),
-    ],
   );
 }
 
-Widget tracksItem(context){
-  return Container();
+Widget tracksItem({context,image,heading,description}){
+  return Container(
+    width: MediaQuery.of(context).size.width,
+    padding: EdgeInsets.fromLTRB(4.0, 4.0, 4.0, 4.0),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Container(
+            height: 300,
+            width: 400,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(image),
+                fit: BoxFit.contain
+              )
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left:8.0),
+          child: Text(
+            heading,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: const Color(0xff107cfe),
+              fontSize: 21.0
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Text(
+            description,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: const Color(0xffffffff),
+              fontSize: 17.0
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget spacer(){
+  return Container(
+    width: 50,
+    height: 250,
+  );
 }
