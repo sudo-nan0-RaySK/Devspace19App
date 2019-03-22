@@ -66,7 +66,7 @@ class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixi
           triggerBottomModalSheet(
               context: context,
               eventHandler1: () {Navigator.pushNamedAndRemoveUntil(context, '/timeline',(Route<dynamic> route)=>false);},
-              eventHandler2: () {},
+              eventHandler2: () {_controller.animateTo(0);},
               eventHandler3: () {},
               asset1: 'lib/assets/itinerarybg.png',
               asset2: 'lib/assets/tri_cir_sq_bg.png',
