@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'widgets/circularBottomSheet.dart';
 import 'screens/authGreet.dart';
 import 'screens/register.dart';
 import 'screens/timelineFlow.dart';
@@ -16,7 +15,7 @@ void main(List<String> args) {
 
 class DevspaceApp extends StatelessWidget{
 
-  var devspaceTheme = ThemeData(
+  final devspaceTheme = ThemeData(
     accentColor: const Color(0xff000000),
     primaryColor: const Color(0xff107cfe),
     brightness: Brightness.dark,
@@ -33,6 +32,7 @@ class DevspaceApp extends StatelessWidget{
       routes: <String,WidgetBuilder>{
         '/timeline': (context)=>TimelineFlow(),
         '/login':(context)=>Login(),
+        '/register':(context)=>Register(),
         '/codespace':(context)=>Codespace(),
       },
     );

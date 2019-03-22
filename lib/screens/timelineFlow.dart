@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:devspace_app/widgets/devspaceAppbar.dart';
 import 'package:devspace_app/widgets/notchedBar.dart';
 import 'package:devspace_app/widgets/circularBottomSheet.dart';
 import 'package:devspace_app/widgets/devspaceTabBar.dart';

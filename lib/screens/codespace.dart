@@ -22,7 +22,7 @@ class CodespaceState extends State<Codespace>
     Tab(text: 'TECH SUPPORT'),
   ];
 
-  TabController _controller = null;
+  TabController _controller;
 
   @override
   void initState() {
@@ -31,7 +31,9 @@ class CodespaceState extends State<Codespace>
   }
 
   @override
-  void dispose() {}
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -263,16 +265,6 @@ Widget prizetable(context){
 }
 
 Widget techSupportTab(context){
-  var container = Container(
-              child: Text(
-                "Contact our technical team for any kind of technical assistence",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: const Color(0xffffffff),
-                  fontSize: 13.0,
-                ),
-              ),
-            );
   return Column(
     children: <Widget>[
       Row(
