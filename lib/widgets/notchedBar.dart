@@ -7,7 +7,7 @@ Widget notchedBar({tracksPressedListner,profilePressedListner}){
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         IconButton(
-          icon: Icon(Icons.track_changes),
+          icon: Icon(Icons.local_activity),
           onPressed: tracksPressedListner,
         ),
         IconButton(

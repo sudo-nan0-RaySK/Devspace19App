@@ -5,6 +5,7 @@ import 'screens/register.dart';
 import 'screens/timelineFlow.dart';
 import 'screens/login.dart';
 import 'screens/codespace.dart';
+import 'screens/profile.dart';
 
 void main(List<String> args) {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -35,6 +36,7 @@ class DevspaceApp extends StatelessWidget{
         '/register':(context)=>Register(),
         '/codespace':(context)=>Codespace(tracks: false,),
         '/tracks':(context)=>Codespace(tracks: true,),
+        '/profile':(context)=>Profile(),
       },
     );
   }
