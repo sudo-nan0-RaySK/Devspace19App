@@ -314,7 +314,7 @@ Widget techSupportTab(context){
           context:context,
           name:"Palash Golecha",
           github: "git/pgolecha",
-          image: "loda"
+          image: "lib/assets/Circle_Palash.png"
         ),
       ),
       Padding(
@@ -323,7 +323,7 @@ Widget techSupportTab(context){
           context:context,
           name:"Pradyun Gedam",
           github: "git/pradyunsg",
-          image: "loda"
+          image: "lib/assets/Circle_PradyunGedam.png"
         ),
       ),
       Padding(
@@ -332,7 +332,7 @@ Widget techSupportTab(context){
           context:context,
           name:"Mayank Aggarwaal",
           github: "git/mayankaggarwal",
-          image: "loda"
+          image: "lib/assets/Circle_Mayank.png"
         ),
       ),
       Padding(
@@ -341,7 +341,7 @@ Widget techSupportTab(context){
           context:context,
           name:"Tarush Nagpal",
           github: "git/CallMeTarush",
-          image: "loda"
+          image: "lib/assets/CircleTarush.png"
         ),
       ),
       Padding(
@@ -350,7 +350,7 @@ Widget techSupportTab(context){
           context:context,
           name:"Saksham Sethi",
           github: "git/sudo-nan0-RaySK",
-          image: "loda"
+          image: "lib/assets/CircleSaksham.png"
         ),
       ),
       Padding(
@@ -359,7 +359,7 @@ Widget techSupportTab(context){
           context:context,
           name:"Namit Nathwani",
           github: "git/namsnath",
-          image: "loda"
+          image: "lib/assets/Circle_NamitNathwani.png"
         ),
       )
     ],
@@ -377,7 +377,7 @@ Widget techSupportListItem({context,name,github,image}){
               height: 60,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('lib/assets/tri_cir_sq_bg.png'),
+                  image: AssetImage(image),
                   fit: BoxFit.cover
                 )
               ),

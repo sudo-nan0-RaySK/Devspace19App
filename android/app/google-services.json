@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "982103748931",
+    "firebase_url": "https://devspace-2019a.firebaseio.com",
+    "project_id": "devspace-2019a",
+    "storage_bucket": "devspace-2019a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982103748931:android:22ca69f7aee9c8c1",
+        "android_client_info": {
+          "package_name": "com.example.devspaceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982103748931-09i38ciphk4ij1u33mi2sk1fkodg6qu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdVW7TaM6FwfX91QNtpmkt09bCGfQBNKI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

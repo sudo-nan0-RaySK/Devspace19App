@@ -209,7 +209,11 @@ class RegisterState extends State<Register> {
         if(resObj.success){
           setEmail(_email).then((onValue){
             if(onValue){
-              Navigator.pushNamedAndRemoveUntil(context, '/timeline', (Route<dynamic> route) => false);
+              setName(resObj.name).then((onFinalValue){
+                if(onFinalValue){
+                  Navigator.pushNamedAndRemoveUntil(context, '/timeline', (Route<dynamic> route) => false);
+                }
+              });
             }
           });
         }
@@ -224,5 +228,9 @@ class RegisterState extends State<Register> {
   Future<bool> setEmail(String email) async{
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setString("email", email);
+  }
+  Future<bool> setName(String name) async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.setString("name", name);
   }
 }
