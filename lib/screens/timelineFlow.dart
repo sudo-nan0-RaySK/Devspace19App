@@ -34,6 +34,18 @@ class TimelineFlowState extends State<TimelineFlow> with SingleTickerProviderSta
     super.dispose();
   }
 
+  Widget devspaceTriangle(){
+    return Container(
+      height: 30,
+      width: 30,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('lib/assets/Triangle_white.png'),
+          fit: BoxFit.contain
+        )
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +63,7 @@ class TimelineFlowState extends State<TimelineFlow> with SingleTickerProviderSta
         profilePressedListner: (){Navigator.pushNamedAndRemoveUntil(context, '/profile',(Route<dynamic> route)=>false);},
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_upward),
+        child: devspaceTriangle(),
         backgroundColor: const Color(0xff107cfe),
         onPressed: (){triggerBottomModalSheet(
           context:context,
@@ -118,40 +130,30 @@ List<TimelineModel> day1List(){
     TimelineModel(
       id: "1",
       description: "At Anna Auditorium.",
-      title: "7:00-9:00 - Report",
+      title: "10:00-11:30 - Opening Ceremoy",
     ),
     TimelineModel(
       id: "2",
       description: "At Anna Auditorium.",
-      title: "9:00-10:00 - Participants Arrive",
-    ),
-    TimelineModel(
-      id: "3",
-      description: "At Anna Auditorium.",
-      title: "10:00-11:30 - Opening Ceremoy",
-    ),
-    TimelineModel(
-      id: "4",
-      description: "At Anna Auditorium.",
       title: "12:00-13:00 - Keynote (Lawrence-IBM)",
     ),
     TimelineModel(
-      id: "5",
+      id: "3",
       description: "Amazon - Rise of Voice Interface",
       title: "14:00-15:00 - Talk (Sohan Maheshwar)",
     ),
     TimelineModel(
-      id: "6",
+      id: "4",
       description: "At Anna Auditorium.",
       title: "15:15-16:00 - Talk (Edureka)",
     ),
     TimelineModel(
-      id: "7",
+      id: "5",
       description: "Coding Blocks - Competitive Coding",
       title: "16:15-19:15 - Workshop (Prateek Narang)",
     ),
     TimelineModel(
-      id: "8",
+      id: "6",
       description: "TBD",
       title: "19:30-21:00 - Talk (Microsoft)",
     ),
@@ -162,19 +164,9 @@ List<TimelineModel> day1List(){
 List<TimelineModel> day2List(){
   List<TimelineModel> list = [
     TimelineModel(
-      id: "1",
-      description: "At Anna Auditorium.",
-      title: "7:00-9:30 - Report",
-    ),
-    TimelineModel(
-      id: "2",
-      description: "At Anna Auditorium.",
-      title: "9:30-10:00 - Participants Arrive",
-    ),
-    TimelineModel(
       id: "3",
       description: "IBM - Deep Learning and Watson",
-      title: "10:00-13:00 - Workshop (Siraj Rawal)",
+      title: "10:00-13:00 - Workshop",
     ),
     TimelineModel(
       id: "4",
@@ -188,13 +180,18 @@ List<TimelineModel> day2List(){
     ),
     TimelineModel(
       id: "6",
-      description: "At CS Hall.",
-      title: "16:30-19:00 - Codespace Registrations",
+      description: "At CS Hall",
+      title: "16:30-18:30 - Codespace Registrations",
     ),
     TimelineModel(
       id: "7",
-      description: "By Ex-Google Dev",
-      title: "19:00 - Codespace Begins!",
+      description: "At Anna Audi",
+      title: "18:30-22:00 - Codespace Inaugration!",
+    ),
+    TimelineModel(
+      id: "9",
+      description: "At CS Hall",
+      title: "22:00-23:00 - Dinner",
     ),
   ];
   return list;
@@ -205,42 +202,17 @@ List<TimelineModel> day3List(){
     TimelineModel(
       id: "1",
       description: "At Anna Auditorium.",
-      title: "7:00-9:00 - Report",
+      title: "10:00-12:30 - Code Review",
     ),
     TimelineModel(
       id: "2",
       description: "At Anna Auditorium.",
-      title: "9:00-10:00 - Participants Arrive",
+      title: "13:30-14:30 - Lunch",
     ),
     TimelineModel(
       id: "3",
       description: "At Anna Auditorium.",
-      title: "10:00-11:30 - Opening Ceremoy",
-    ),
-    TimelineModel(
-      id: "4",
-      description: "At Anna Auditorium.",
-      title: "12:00-13:00 - Keynote (Lawrence-IBM)",
-    ),
-    TimelineModel(
-      id: "5",
-      description: "Amazon - Rise of Voice Interface",
-      title: "14:00-15:00 - Talk (Sohan Maheshwar)",
-    ),
-    TimelineModel(
-      id: "6",
-      description: "At Anna Auditorium.",
-      title: "15:15-16:00 - Talk (Edureka)",
-    ),
-    TimelineModel(
-      id: "7",
-      description: "Coding Blocks - Competitive Coding",
-      title: "16:15-19:15 - Workshop (Prateek Narang)",
-    ),
-    TimelineModel(
-      id: "8",
-      description: "TBD",
-      title: "19:30-21:00 - Talk (Microsoft)",
+      title: "16:00 Onwards - Final Presentations",
     ),
   ];
   return list;

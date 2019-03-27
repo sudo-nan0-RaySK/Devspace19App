@@ -45,6 +45,19 @@ class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixi
     super.dispose();
   }
 
+  Widget devspaceTriangle(){
+    return Container(
+      height: 30,
+      width: 30,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('lib/assets/Triangle_white.png'),
+          fit: BoxFit.contain
+        )
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +73,7 @@ class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixi
         profilePressedListner: () {Navigator.pushNamedAndRemoveUntil(context, '/profile',(Route<dynamic> route)=>false);},
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_upward),
+        child: devspaceTriangle(),
         backgroundColor: const Color(0xff107cfe),
         onPressed: () {
           triggerBottomModalSheet(
