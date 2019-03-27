@@ -98,11 +98,11 @@ Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(left:35.0,top:10.0),
+              padding: const EdgeInsets.only(left:45.0,top:10.0),
               child: roundedButtonMaterial(context,eventHandler2,asset2),
             ),
             Padding(
-              padding: const EdgeInsets.only(left:220.0,top:10.0),
+              padding: const EdgeInsets.only(left:185.0,top:10.0),
               child: roundedButtonMaterial(context,eventHandler3,asset3),
             )
           ],
@@ -110,11 +110,11 @@ Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,
         Row(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(left:25.0,top:8.0),
+              padding: const EdgeInsets.only(left:35.0,top:8.0),
               child: Text('Codespace',style: TextStyle(color: index2Color),),
             ),
             Padding(
-              padding: const EdgeInsets.only(left:215.0,top:1.0),
+              padding: const EdgeInsets.only(left:180.0,top:1.0),
               child: Text('Events',style: TextStyle(color: index3Color),),
             )
           ],
