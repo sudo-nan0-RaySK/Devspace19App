@@ -242,7 +242,7 @@ Widget prizetable(context){
           Padding(
             padding: const EdgeInsets.only(right:20.0),
             child: Text(
-              "Cash prize 35k, goodies, T-shirts, licenses of various softwares like Sketch, Invision,and much more",
+              "30k Cash Prize Sketch licenses, Creative Tim Licenses, Wolfram Licenses, Taskade Licenses, Hackerearth Tshirts, JetBrains Tshirts, Stickers and goodies",
             ),
           ),
         ]
@@ -260,7 +260,7 @@ Widget prizetable(context){
           Padding(
             padding: const EdgeInsets.only(right:20.0,top: 8.0),
             child: Text(
-              "Cash prize 35k, goodies, T-shirts, licenses of various softwares like Sketch, Invision,and much more",
+              "20k Cash Prize,Creative Tim Licenses,Wolfram Licenses,Taskade Licenses,Hackerearth Tshirts,JetBrains Tshirts,Creative Tim Licenses,Devspace Tshirts,Stickers and goodies",
             ),
           ),
         ]
@@ -278,7 +278,25 @@ Widget prizetable(context){
           Padding(
             padding: const EdgeInsets.only(right:20.0,top: 8.0),
             child: Text(
-              "Cash prize 35k, goodies, T-shirts, licenses of various softwares like Sketch, Invision,and much more",
+              "10k Cash Prize,Creative Tim Licenses,Wolfram Licenses,Taskade Licenses,Hackerearth TshirtsJetBrains Tshirts,Devspace Tshirts,Stickers and goodies,",
+            ),
+          ),
+        ]
+      ),
+      TableRow(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right:58.0,top: 8.0),
+            child: Text(
+              "Best Alexa Skill Implentation :",
+              textAlign: TextAlign.right,
+              style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right:20.0,top: 8.0),
+            child: Text(
+              "Amazon Echo Dot,Alexa Tshirts,Devspace Tshirts,Alexa Schwags,Creative Tim Licenses,Wolfram Licenses,Taskade Licenses,Stickers and goodies",
             ),
           ),
         ]
