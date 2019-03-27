@@ -80,7 +80,7 @@ class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixi
               context: context,
               eventHandler1: () {Navigator.pushNamedAndRemoveUntil(context, '/timeline',(Route<dynamic> route)=>false);},
               eventHandler2: () {_controller.animateTo(0);},
-              eventHandler3: () {},
+              eventHandler3: () {Navigator.pushNamedAndRemoveUntil(context, '/events',(Route<dynamic> route)=>false);},
               asset1: 'lib/assets/itinerarybg.png',
               asset2: 'lib/assets/tri_cir_sq_bg.png',
               asset3: 'lib/assets/micbg.png',

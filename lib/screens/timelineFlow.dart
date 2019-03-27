@@ -69,7 +69,7 @@ class TimelineFlowState extends State<TimelineFlow> with SingleTickerProviderSta
           context:context,
           eventHandler1: (){},
           eventHandler2: (){Navigator.pushNamedAndRemoveUntil(context, '/codespace',(Route<dynamic> route)=>false);},
-          eventHandler3: (){},
+          eventHandler3: (){Navigator.pushNamedAndRemoveUntil(context, '/events',(Route<dynamic> route)=>false);},
           asset1: 'lib/assets/itinerarybg.png',
           asset2: 'lib/assets/tri_cir_sq_bg.png',
           asset3: 'lib/assets/micbg.png', 
