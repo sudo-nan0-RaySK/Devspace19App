@@ -101,7 +101,7 @@ class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixi
 Widget _codeSpaceLayout({context,List<Tab> tabs,controller}){
   return SingleChildScrollView(
       child: Container(
-      height: MediaQuery.of(context).size.height,
+      height: 800,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -221,87 +221,93 @@ Widget codespaceTab(context){
           )
         ],
       ),
-      prizetable(context)
+      prizetable(context),
+      Container(
+        height: 100,
+        width: 100,
+      )
     ],
   );
 }
 
 Widget prizetable(context){
-  return Table(
-    children: <TableRow>[
-      TableRow(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right:58.0),
-            child: Text(
-              "PRIZE 1 :",
-              textAlign: TextAlign.right,
-              style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+  return Expanded(
+    child: Table(
+      children: <TableRow>[
+        TableRow(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right:58.0),
+              child: Text(
+                "PRIZE 1 :",
+                textAlign: TextAlign.right,
+                style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right:20.0),
-            child: Text(
-              "30k Cash Prize Sketch licenses, Creative Tim Licenses, Wolfram Licenses, Taskade Licenses, Hackerearth Tshirts, JetBrains Tshirts, Stickers and goodies",
+            Padding(
+              padding: const EdgeInsets.only(right:20.0),
+              child: Text(
+                "30k Cash Prize Sketch licenses, Creative Tim Licenses, Wolfram Licenses, Taskade Licenses, Hackerearth Tshirts, JetBrains Tshirts, Stickers and goodies",
+              ),
             ),
-          ),
-        ]
-      ),
-      TableRow(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right:58.0,top: 8.0),
-            child: Text(
-              "PRIZE 2 :",
-              textAlign: TextAlign.right,
-              style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+          ]
+        ),
+        TableRow(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right:58.0,top: 8.0),
+              child: Text(
+                "PRIZE 2 :",
+                textAlign: TextAlign.right,
+                style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right:20.0,top: 8.0),
-            child: Text(
-              "20k Cash Prize,Creative Tim Licenses,Wolfram Licenses,Taskade Licenses,Hackerearth Tshirts,JetBrains Tshirts,Creative Tim Licenses,Devspace Tshirts,Stickers and goodies",
+            Padding(
+              padding: const EdgeInsets.only(right:20.0,top: 8.0),
+              child: Text(
+                "20k Cash Prize,Creative Tim Licenses,Wolfram Licenses,Taskade Licenses,Hackerearth Tshirts,JetBrains Tshirts,Creative Tim Licenses,Devspace Tshirts,Stickers and goodies",
+              ),
             ),
-          ),
-        ]
-      ),
-      TableRow(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right:58.0,top: 8.0),
-            child: Text(
-              "PRIZE 3 :",
-              textAlign: TextAlign.right,
-              style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+          ]
+        ),
+        TableRow(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right:58.0,top: 8.0),
+              child: Text(
+                "PRIZE 3 :",
+                textAlign: TextAlign.right,
+                style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right:20.0,top: 8.0),
-            child: Text(
-              "10k Cash Prize,Creative Tim Licenses,Wolfram Licenses,Taskade Licenses,Hackerearth TshirtsJetBrains Tshirts,Devspace Tshirts,Stickers and goodies,",
+            Padding(
+              padding: const EdgeInsets.only(right:20.0,top: 8.0),
+              child: Text(
+                "10k Cash Prize,Creative Tim Licenses,Wolfram Licenses,Taskade Licenses,Hackerearth TshirtsJetBrains Tshirts,Devspace Tshirts,Stickers and goodies,",
+              ),
             ),
-          ),
-        ]
-      ),
-      TableRow(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right:58.0,top: 8.0),
-            child: Text(
-              "Best Alexa Skill Implentation :",
-              textAlign: TextAlign.right,
-              style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+          ]
+        ),
+        TableRow(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right:58.0,top: 8.0),
+              child: Text(
+                "Best Alexa Skill Implentation :",
+                textAlign: TextAlign.right,
+                style: TextStyle(color: const Color(0xff107cfe),fontSize: 15),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right:20.0,top: 8.0),
-            child: Text(
-              "Amazon Echo Dot,Alexa Tshirts,Devspace Tshirts,Alexa Schwags,Creative Tim Licenses,Wolfram Licenses,Taskade Licenses,Stickers and goodies",
+            Padding(
+              padding: const EdgeInsets.only(right:20.0,top: 8.0),
+              child: Text(
+                "Amazon Echo Dot,Alexa Tshirts,Devspace Tshirts,Alexa Schwags,Creative Tim Licenses,Wolfram Licenses,Taskade Licenses,Stickers and goodies",
+              ),
             ),
-          ),
-        ]
-      )
-    ],
+          ]
+        )
+      ],
+    ),
   );
 }
 
