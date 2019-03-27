@@ -42,10 +42,7 @@ class ProfileState extends State<Profile> {
     return Scaffold(
       appBar: devspaceAppBar(context, () {}, false, false),
       bottomNavigationBar: notchedBar(
-        tracksPressedListner: () {
-          Navigator.pushNamedAndRemoveUntil(
-              context, '/tracks', (Route<dynamic> route) => false);
-        },
+        tracksPressedListner: () {},
         profilePressedListner: () {},
       ),
       body: profileLayout(context),

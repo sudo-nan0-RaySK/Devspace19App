@@ -57,7 +57,7 @@ class EventsState extends State<Events> with SingleTickerProviderStateMixin{
         autoImplyLeading: false
       ),
       bottomNavigationBar: notchedBar(
-        tracksPressedListner: (){Navigator.pushNamedAndRemoveUntil(context, '/tracks',(Route<dynamic> route)=>false);},
+        tracksPressedListner: (){},
         profilePressedListner: (){Navigator.pushNamedAndRemoveUntil(context, '/profile',(Route<dynamic> route)=>false);},
       ),
       floatingActionButton: FloatingActionButton(

@@ -67,6 +67,7 @@ class DevspaceAppState extends State<DevspaceApp>{
     print(_email);
     return MaterialApp(
       title: 'Devspace\'19',
+      debugShowCheckedModeBanner:false,
       home: home,
       theme: devspaceTheme,
       routes: <String,WidgetBuilder>{

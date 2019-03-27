@@ -69,8 +69,8 @@ class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixi
           tabs: _tabs,
           autoImplyLeading: false),
       bottomNavigationBar: notchedBar(
-        tracksPressedListner: () {_controller.animateTo(1);},
-        profilePressedListner: () {Navigator.pushNamedAndRemoveUntil(context, '/profile',(Route<dynamic> route)=>false);},
+        tracksPressedListner: () {},
+        profilePressedListner: () {Navigator.pushNamed(context, '/profile');},
       ),
       floatingActionButton: FloatingActionButton(
         child: devspaceTriangle(),
@@ -350,7 +350,7 @@ Widget techSupportTab(context){
         child: techSupportListItem(
           context:context,
           name:"Palash Golecha",
-          github: "git/pgolecha",
+          github: "git/palashgo",
           image: "lib/assets/Circle_Palash.png"
         ),
       ),
@@ -367,8 +367,8 @@ Widget techSupportTab(context){
         padding: const EdgeInsets.fromLTRB(68.0,18.0,8.0,8.0),
         child: techSupportListItem(
           context:context,
-          name:"Mayank Aggarwaal",
-          github: "git/mayankaggarwal",
+          name:"Mayank Agarwal",
+          github: "git/mayankagarwal09",
           image: "lib/assets/Circle_Mayank.png"
         ),
       ),
