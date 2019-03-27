@@ -57,7 +57,7 @@ class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixi
           autoImplyLeading: false),
       bottomNavigationBar: notchedBar(
         tracksPressedListner: () {_controller.animateTo(1);},
-        profilePressedListner: () {},
+        profilePressedListner: () {Navigator.pushNamedAndRemoveUntil(context, '/profile',(Route<dynamic> route)=>false);},
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.arrow_upward),

@@ -4,7 +4,8 @@ import 'package:devspace_app/widgets/notchedBar.dart';
 import 'package:devspace_app/widgets/circularBottomSheet.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:devspace_app/widgets/screenwideButton.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class Profile extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -83,7 +84,7 @@ class ProfileState extends State<Profile> {
           Padding(
             padding: const EdgeInsets.only(top: 8.0, left: 28.9),
             child: faqsContainer(context),
-          )
+          ),
         ],
       ),
     );
@@ -151,28 +152,52 @@ class ProfileState extends State<Profile> {
             child: faqItem(
                 context: context,
                 question:
-                    'Go to Settings > Wi-Fi , and make sure \n Wi-Fi is turned on. Then tap Other? \n',
+                    'How is Devspace different from \nother hackathons? \n',
                 answer:
-                    'Enter the exact name of the network , then \n tap Security.'),
+                    'Devspace is NOT a hackathon. \nIt is a developers conference consisting \nof an expo, expert talks, workshops and \nCodespace.'),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: faqItem(
                 context: context,
                 question:
-                    'Go to Settings > Wi-Fi , and make sure \n Wi-Fi is turned on. Then tap Other? \n',
+                    'What are the talks like?\n',
                 answer:
-                    'Enter the exact name of the network , then \n tap Security.'),
+                    ' Experts from various fields share \n their experiences and knowledge with \n all the participants in the form of an \n interactive talk.'),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: faqItem(
                 context: context,
                 question:
-                    'Go to Settings > Wi-Fi , and make sure \n Wi-Fi is turned on. Then tap Other? \n',
+                    'What is Codespace?',
                 answer:
-                    'Enter the exact name of the network , then \n tap Security.'),
+                    ' Codespace is 24-hour hackathon held\n on the last conference day.\n It has a set of tracks and has been\n proven successful previously'),
           ),
+          Padding(
+            padding: const EdgeInsets.only(right:28.0),
+            child: screenwideButton(
+            context: context,
+            onTapAction: (){
+              clear().then((onValue){
+                if(onValue){
+                  Navigator.pushNamedAndRemoveUntil(context, '/authGreet', (Route<dynamic> route) => false);
+                }
+              });
+            },
+            edgeTop: 30.0,
+            edgeLeft: 0.0,
+            btnText: 'Logout',
+            btnTextColor: const Color(0xffffffff),
+            btnHeight: 45.0,
+            btnWidth: 300.0,
+            decorationObject: BoxDecoration(
+              color: const Color(0xff107cfe),
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            )
+        ),
+          )
         ],
       ),
     );
@@ -197,7 +222,7 @@ class ProfileState extends State<Profile> {
               child: Text(question,
                   textAlign: TextAlign.left,
                   style:
-                      TextStyle(fontSize: 13, color: const Color(0xfffafafa))),
+                      TextStyle(fontSize: 13, color: const Color(0xff107cfe))),
             ),
           ],
         ),
@@ -213,15 +238,20 @@ class ProfileState extends State<Profile> {
                           fontSize: 13, color: const Color(0xff107cfe)))),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 3.0),
+              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
               child: Text(answer,
                   textAlign: TextAlign.left,
                   style:
                       TextStyle(fontSize: 13, color: const Color(0xfffafafa))),
             ),
           ],
-        )
+        ),
       ],
     );
+  }
+
+  Future<bool> clear() async{
+    SharedPreferences prefs =await SharedPreferences.getInstance();
+    return prefs.clear();
   }
 }

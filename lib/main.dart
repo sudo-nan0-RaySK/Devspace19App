@@ -76,6 +76,7 @@ class DevspaceAppState extends State<DevspaceApp>{
         '/codespace':(context)=>Codespace(tracks: false,),
         '/tracks':(context)=>Codespace(tracks: true,),
         '/profile':(context)=>Profile(),
+        '/authGreet' : (context)=>AuthGreet()
       },
     );
   }
