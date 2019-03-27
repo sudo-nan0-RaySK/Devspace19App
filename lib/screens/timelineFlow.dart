@@ -129,33 +129,33 @@ List<TimelineModel> day1List(){
   List<TimelineModel> list = [
     TimelineModel(
       id: "1",
-      description: "At Anna Auditorium.",
-      title: "10:00-11:30 - Opening Ceremoy",
+      description: "At Anna Auditorium",
+      title: "9:00-10:00 - Registrations",
     ),
     TimelineModel(
       id: "2",
-      description: "At Anna Auditorium.",
-      title: "12:00-13:00 - Keynote (Lawrence-IBM)",
+      description: "At Anna Auditorium",
+      title: "10:30-11:30 - Opening Ceremony",
     ),
     TimelineModel(
       id: "3",
-      description: "Amazon - Rise of Voice Interface",
-      title: "14:00-15:00 - Talk (Sohan Maheshwar)",
+      description: "Lawrence Mohanraj (IBM) - Embracing innovation in the digital era",
+      title: "11:30-12:30 - Keynote",
     ),
     TimelineModel(
       id: "4",
-      description: "At Anna Auditorium.",
-      title: "15:15-16:00 - Talk (Edureka)",
+      description: "Mohan Raj (Digital Ocean) - Simplifying the Cloud",
+      title: "Talk"
     ),
     TimelineModel(
       id: "5",
-      description: "Coding Blocks - Competitive Coding",
-      title: "16:15-19:15 - Workshop (Prateek Narang)",
+      description: "Sohan Maheshwar (Amazon) - Rise of Voice Interface",
+      title: "13:45-16:45 - Workshop",
     ),
     TimelineModel(
       id: "6",
-      description: "TBD",
-      title: "19:30-21:00 - Talk (Microsoft)",
+      description: "Prateek Narang (Coding Blocks) - Competitive Coding",
+      title: "17:00-20:00 - Workshop",
     ),
   ];
   return list;
@@ -164,34 +164,39 @@ List<TimelineModel> day1List(){
 List<TimelineModel> day2List(){
   List<TimelineModel> list = [
     TimelineModel(
+      id: "1",
+      description: "Viswaprasath KS (Mozilla) - Web AR",
+      title: "10:00-11:00 - Talk",
+    ),
+    TimelineModel(
+      id: "2",
+      description: "Branch - Deep Linking",
+      title: "11:00-12:00 - Talk",
+    ),
+    TimelineModel(
       id: "3",
-      description: "IBM - Deep Learning and Watson",
-      title: "10:00-13:00 - Workshop",
+      description: "IBM - Watson",
+      title: "13:30-16:30 - Workshop",
     ),
     TimelineModel(
       id: "4",
-      description: "Mozilla - WebAR",
-      title: "14:00-15:00 - Talk (Vishwaprasath KS)",
-    ),
-    TimelineModel(
-      id: "5",
-      description: "Google - TBD",
-      title: "15:15-16:30 - Talk (TBD)",
-    ),
-    TimelineModel(
-      id: "6",
       description: "At CS Hall",
       title: "16:30-18:30 - Codespace Registrations",
     ),
     TimelineModel(
-      id: "7",
-      description: "At Anna Audi",
-      title: "18:30-22:00 - Codespace Inaugration!",
+      id: "5",
+      description: "At Anna Auditorium",
+      title: "18:30-20:00 - Codespace Introduction",
     ),
     TimelineModel(
-      id: "9",
+      id: "6",
       description: "At CS Hall",
-      title: "22:00-23:00 - Dinner",
+      title: "22:00:23:00 - Dinner",
+    ),
+    TimelineModel(
+      id: "7",
+      description: "At Anna Auditorium",
+      title: "23:00 - Team Finalisation",
     ),
   ];
   return list;
@@ -201,18 +206,23 @@ List<TimelineModel> day3List(){
   List<TimelineModel> list = [
     TimelineModel(
       id: "1",
-      description: "At Anna Auditorium.",
-      title: "10:00-12:30 - Code Review",
+      description: "At CS Hall.",
+      title: "04:00 - Snacks",
     ),
     TimelineModel(
       id: "2",
       description: "At Anna Auditorium.",
-      title: "13:30-14:30 - Lunch",
+      title: "10:00 - Code Review",
     ),
     TimelineModel(
       id: "3",
-      description: "At Anna Auditorium.",
-      title: "16:00 Onwards - Final Presentations",
+      description: "At CS Hall.",
+      title: "13:30 - Lunch",
+    ),
+    TimelineModel(
+      id: "4",
+      description: "At CS Hall.",
+      title: "16:00 - Final Presentations",
     ),
   ];
   return list;
