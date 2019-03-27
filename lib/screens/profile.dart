@@ -183,7 +183,7 @@ class ProfileState extends State<Profile> {
             child: faqItem(
                 context: context,
                 question:
-                    'What is Codespace?',
+                    'What is Codespace? \n Tell me more.',
                 answer:
                     ' Codespace is 24-hour hackathon held\n on the last conference day.\n It has a set of tracks and has been\n proven successful previously'),
           ),
