@@ -1,4 +1,4 @@
-package com.example.devspaceapp;
+package com.csi.devspaceapp;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

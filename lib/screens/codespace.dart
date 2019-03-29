@@ -101,7 +101,7 @@ class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixi
 Widget _codeSpaceLayout({context,List<Tab> tabs,controller}){
   return SingleChildScrollView(
       child: Container(
-      height: 800,
+      height: 900,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         image: DecorationImage(

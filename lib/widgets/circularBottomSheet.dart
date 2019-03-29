@@ -80,45 +80,79 @@ Widget roundedButtons({context,eventHandler1,eventHandler2,eventHandler3,asset1,
     color: Colors.transparent,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      // children: <Widget>[
+      //   Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: <Widget>[
+      //       Padding(
+      //         padding: const EdgeInsets.only(top:69.0,left:5.0),
+      //         child: roundedButtonMaterial(context,eventHandler1,asset1),
+      //       ),
+      //     ],
+      //   ),
+      //   Padding(
+      //     padding: const EdgeInsets.only(top:8.0),
+      //     child: Text('Itinerary',style: TextStyle(color: index1Color),),
+      //   ),
+      //   Row(
+      //     mainAxisAlignment: MainAxisAlignment.start,
+      //     children: <Widget>[
+      //       Padding(
+      //         padding: const EdgeInsets.only(left:45.0,top:10.0),
+      //         child: roundedButtonMaterial(context,eventHandler2,asset2),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.only(left:185.0,top:10.0),
+      //         child: roundedButtonMaterial(context,eventHandler3,asset3),
+      //       )
+      //     ],
+      //   ),
+      //   Row(
+      //     children: <Widget>[
+      //       Padding(
+      //         padding: const EdgeInsets.only(left:35.0,top:8.0),
+      //         child: Text('Codespace',style: TextStyle(color: index2Color),),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.only(left:180.0,top:1.0),
+      //         child: Text('Events',style: TextStyle(color: index3Color),),
+      //       )
+      //     ],
+      //   ),
+      // ],
       children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(top:50.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  roundedButtonMaterial(context,eventHandler1,asset1),
+                  Text('Itinerary',style: TextStyle(color: index1Color),),
+                ],
+              )
+            ],
+          ),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top:69.0,left:5.0),
-              child: roundedButtonMaterial(context,eventHandler1,asset1),
+            Column(
+              children: <Widget>[
+                roundedButtonMaterial(context,eventHandler2,asset2),
+                Text('Codespace',style: TextStyle(color: index2Color),),
+              ],
             ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top:8.0),
-          child: Text('Itinerary',style: TextStyle(color: index1Color),),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left:45.0,top:10.0),
-              child: roundedButtonMaterial(context,eventHandler2,asset2),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left:185.0,top:10.0),
-              child: roundedButtonMaterial(context,eventHandler3,asset3),
+            Container(width: 175,),
+            Column(
+              children: <Widget>[
+                roundedButtonMaterial(context,eventHandler3,asset3),
+                Text('Events',style: TextStyle(color: index3Color),),
+              ],
             )
           ],
-        ),
-        Row(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left:35.0,top:8.0),
-              child: Text('Codespace',style: TextStyle(color: index2Color),),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left:180.0,top:1.0),
-              child: Text('Events',style: TextStyle(color: index3Color),),
-            )
-          ],
-        ),
+        )
       ],
     ),
   );

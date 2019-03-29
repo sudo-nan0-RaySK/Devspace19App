@@ -21,12 +21,14 @@ class AuthGreetState extends State<AuthGreet>{
             fit: BoxFit.cover
           )
         ),
-        child: Stack(
-          children: <Widget>[
-            devspaceHolder(context,43.0,160.0),
-            _loginButton(context),
-            _registerButton(context)
-          ],
+        child: Center(
+          child: Stack(
+            children: <Widget>[
+              devspaceHolder(context,20.0,160.0),
+              _loginButton(context),
+              _registerButton(context)
+            ],
+          ),
         ),
       )
     );
@@ -39,7 +41,7 @@ Widget _loginButton(context){
     context: context,
     onTapAction: (){Navigator.pushNamedAndRemoveUntil(context, '/login',ModalRoute.withName('/'));},
     edgeTop: 530.0,
-    edgeLeft: 25.0,
+    edgeLeft: 0.0,
     btnText: 'Login',
     btnTextColor: const Color(0xffffffff),
     btnHeight: 45.0,
@@ -58,7 +60,7 @@ Widget _registerButton(context){
     context: context,
     onTapAction: (){Navigator.pushNamedAndRemoveUntil(context, '/register',ModalRoute.withName('/'));},
     edgeTop: 600.0,
-    edgeLeft: 25.0,
+    edgeLeft: 0.0,
     btnText: 'Signup',
     btnTextColor: const Color(0xff000000),
     btnHeight: 45.0,
