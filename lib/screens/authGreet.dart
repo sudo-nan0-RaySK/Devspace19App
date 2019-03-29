@@ -13,21 +13,23 @@ class AuthGreetState extends State<AuthGreet>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('lib/assets/mainScreenbg.png'),
-            fit: BoxFit.cover
-          )
-        ),
-        child: Center(
-          child: Stack(
-            children: <Widget>[
-              devspaceHolder(context,20.0,160.0),
-              _loginButton(context),
-              _registerButton(context)
-            ],
+      body: SingleChildScrollView(
+              child: Container(
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('lib/assets/mainScreenbg.png'),
+              fit: BoxFit.cover
+            )
+          ),
+          child: Center(
+            child: Stack(
+              children: <Widget>[
+                devspaceHolder(context,20.0,160.0),
+                _loginButton(context),
+                _registerButton(context)
+              ],
+            ),
           ),
         ),
       )

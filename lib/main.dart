@@ -10,6 +10,7 @@ import 'screens/codespace.dart';
 import 'screens/profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/events.dart';
+import 'screens/tokens.dart';
 
 void main(List<String> args) {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -78,7 +79,8 @@ class DevspaceAppState extends State<DevspaceApp>{
         '/tracks':(context)=>Codespace(tracks: true,),
         '/profile':(context)=>Profile(),
         '/authGreet' : (context)=>AuthGreet(),
-        '/events': (context)=>Events()
+        '/events': (context)=>Events(),
+        '/tokens': (context)=>Tokens()
       },
     );
   }

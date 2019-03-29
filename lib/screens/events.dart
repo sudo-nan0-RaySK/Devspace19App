@@ -57,7 +57,7 @@ class EventsState extends State<Events> with SingleTickerProviderStateMixin{
         autoImplyLeading: false
       ),
       bottomNavigationBar: notchedBar(
-        tracksPressedListner: (){},
+        tracksPressedListner: (){Navigator.pushNamedAndRemoveUntil(context, '/tokens',(Route<dynamic> route)=>false);},
         profilePressedListner: (){Navigator.pushNamedAndRemoveUntil(context, '/profile',(Route<dynamic> route)=>false);},
       ),
       floatingActionButton: FloatingActionButton(
@@ -164,7 +164,7 @@ class EventsState extends State<Events> with SingleTickerProviderStateMixin{
           speaker: "Vishwaparasath K.S.",
           time:"10:00-11:00",
           date: "30th March",
-          desc: "Web AR amd Mixed Reality on browsers."
+          desc: "Web AR and Mixed Reality on browsers."
         ),
       ],
     );

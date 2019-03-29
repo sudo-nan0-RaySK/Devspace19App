@@ -42,7 +42,7 @@ class ProfileState extends State<Profile> {
     return Scaffold(
       appBar: devspaceAppBar(context, () {}, false, false),
       bottomNavigationBar: notchedBar(
-        tracksPressedListner: () {},
+        tracksPressedListner: () {Navigator.pushNamedAndRemoveUntil(context, '/tokens',(Route<dynamic> route)=>false);},
         profilePressedListner: () {},
       ),
       body: profileLayout(context),
@@ -87,7 +87,7 @@ class ProfileState extends State<Profile> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text('Here is your food coupon for Codespace\'19',
+            child: Text('Here is your Participant ID for Devspace\'19',
                 textAlign: TextAlign.left,
                 style: TextStyle(fontSize: 13, color: const Color(0xfffafafa))),
           ),

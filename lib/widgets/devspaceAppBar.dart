@@ -14,7 +14,7 @@ Widget devspaceHeader(context,leftPadding){
     children: <Widget>[
       Container(
         margin: EdgeInsets.only(left:leftPadding,top: 1.0),
-        width: 160,
+        width: 130,
         height: 55,
         decoration: BoxDecoration(
           image: DecorationImage(

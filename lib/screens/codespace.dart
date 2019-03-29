@@ -69,7 +69,7 @@ class CodespaceState extends State<Codespace> with SingleTickerProviderStateMixi
           tabs: _tabs,
           autoImplyLeading: false),
       bottomNavigationBar: notchedBar(
-        tracksPressedListner: () {},
+        tracksPressedListner: () {Navigator.pushNamedAndRemoveUntil(context, '/tokens',(Route<dynamic> route)=>false);},
         profilePressedListner: () {Navigator.pushNamed(context, '/profile');},
       ),
       floatingActionButton: FloatingActionButton(

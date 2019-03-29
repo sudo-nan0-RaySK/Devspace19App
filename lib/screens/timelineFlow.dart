@@ -59,7 +59,7 @@ class TimelineFlowState extends State<TimelineFlow> with SingleTickerProviderSta
         autoImplyLeading: false
       ),
       bottomNavigationBar: notchedBar(
-        tracksPressedListner: (){},
+        tracksPressedListner: (){Navigator.pushNamedAndRemoveUntil(context, '/tokens',(Route<dynamic> route)=>false);},
         profilePressedListner: (){Navigator.pushNamed(context, '/profile');},
       ),
       floatingActionButton: FloatingActionButton(
